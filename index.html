@@ -1,0 +1,480 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fitoquímica - Cultivo, Extração e Isolamento</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            min-height: 100vh;
+            color: #333;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+
+        .header {
+            background: rgba(255, 255, 255, 0.1);
+            backdrop-filter: blur(10px);
+            border-radius: 20px;
+            padding: 40px;
+            margin-bottom: 30px;
+            text-align: center;
+            border: 1px solid rgba(255, 255, 255, 0.2);
+        }
+
+        .header h1 {
+            color: white;
+            font-size: 2.5em;
+            margin-bottom: 15px;
+            font-weight: 300;
+        }
+
+        .header p {
+            color: rgba(255, 255, 255, 0.9);
+            font-size: 1.2em;
+            font-weight: 300;
+        }
+
+        .content {
+            background: rgba(255, 255, 255, 0.95);
+            border-radius: 20px;
+            padding: 40px;
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
+        }
+
+        .keywords-section {
+            margin-bottom: 40px;
+            padding: 25px;
+            background: linear-gradient(90deg, #f8f9fa, #e9ecef);
+            border-left: 5px solid #5081c5;
+            border-radius: 10px;
+        }
+
+        .keywords-title {
+            font-size: 1.4em;
+            color: #495057;
+            margin-bottom: 20px;
+            font-weight: 600;
+        }
+
+        .keywords {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+        }
+
+        .keyword {
+            background: linear-gradient(45deg, #5081c5, #6c9bd1);
+            color: white;
+            padding: 8px 16px;
+            border-radius: 25px;
+            font-size: 0.9em;
+            font-weight: 500;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+            transition: transform 0.2s;
+        }
+
+        .keyword:hover {
+            transform: translateY(-2px);
+        }
+
+        .section {
+            margin-bottom: 40px;
+            padding: 25px;
+            border-left: 4px solid #dc3545;
+            background: #fff;
+            border-radius: 0 10px 10px 0;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+        }
+
+        .section-title {
+            font-size: 1.5em;
+            color: #495057;
+            margin-bottom: 20px;
+            font-weight: 600;
+        }
+
+        .subsection {
+            margin: 25px 0;
+        }
+
+        .subsection-title {
+            color: #dc3545;
+            font-size: 1.1em;
+            font-weight: 600;
+            margin-bottom: 15px;
+            display: flex;
+            align-items: center;
+        }
+
+        .subsection-title::before {
+            content: attr(data-icon);
+            margin-right: 10px;
+            font-size: 1.2em;
+        }
+
+        .highlight-box {
+            background: linear-gradient(135deg, #fff3cd, #ffeaa7);
+            border: 1px solid #ffeaa7;
+            border-radius: 10px;
+            padding: 20px;
+            margin: 20px 0;
+        }
+
+        .highlight-box strong {
+            color: #856404;
+        }
+
+        .table-container {
+            overflow-x: auto;
+            margin: 20px 0;
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            background: white;
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+        }
+
+        th, td {
+            padding: 15px;
+            text-align: left;
+            border-bottom: 1px solid #e9ecef;
+        }
+
+        th {
+            background: linear-gradient(45deg, #495057, #6c757d);
+            color: white;
+            font-weight: 600;
+        }
+
+        tr:hover {
+            background: #f8f9fa;
+        }
+
+        .examples-list {
+            background: #e8f5e8;
+            border-radius: 10px;
+            padding: 20px;
+            margin: 15px 0;
+        }
+
+        .examples-list h4 {
+            color: #155724;
+            margin-bottom: 10px;
+        }
+
+        .examples-list ul {
+            list-style: none;
+            padding-left: 0;
+        }
+
+        .examples-list li {
+            margin: 8px 0;
+            padding-left: 20px;
+            position: relative;
+        }
+
+        .examples-list li::before {
+            content: "🌿";
+            position: absolute;
+            left: 0;
+        }
+
+        .conclusion {
+            background: linear-gradient(135deg, #d4edda, #c3e6cb);
+            border: 1px solid #c3e6cb;
+            border-radius: 15px;
+            padding: 30px;
+            margin-top: 30px;
+        }
+
+        .conclusion h3 {
+            color: #155724;
+            margin-bottom: 15px;
+            display: flex;
+            align-items: center;
+        }
+
+        .conclusion h3::before {
+            content: "✅";
+            margin-right: 10px;
+        }
+
+        .reference {
+            background: #f8f9fa;
+            border-left: 4px solid #6f42c1;
+            padding: 15px;
+            margin: 20px 0;
+            border-radius: 0 10px 10px 0;
+            font-style: italic;
+        }
+
+        .reference::before {
+            content: "🔍 ";
+        }
+
+        @media (max-width: 768px) {
+            .header h1 {
+                font-size: 2em;
+            }
+            
+            .keywords {
+                justify-content: center;
+            }
+            
+            .content {
+                margin: 10px;
+                padding: 20px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <h1>Fitoquímica Aplicada</h1>
+            <p>Cultivo, Extração e Isolamento de Compostos Ativos</p>
+        </div>
+
+        <div class="content">
+            <div class="keywords-section">
+                <h2 class="keywords-title">Keywords</h2>
+                <div class="keywords">
+                    <span class="keyword">Fitoquímica</span>
+                    <span class="keyword">Metabolismo secundário</span>
+                    <span class="keyword">Cultivo medicinal</span>
+                    <span class="keyword">Extração de compostos</span>
+                    <span class="keyword">Cromatografia</span>
+                    <span class="keyword">Biodiversidade brasileira</span>
+                    <span class="keyword">Sustentabilidade</span>
+                    <span class="keyword">Fitoterápicos</span>
+                    <span class="keyword">Análise fitoquímica</span>
+                    <span class="keyword">Purificação</span>
+                </div>
+            </div>
+
+            <div class="section">
+                <h2 class="section-title">Conceitos Fundamentais</h2>
+                
+                <div class="subsection">
+                    <h3 class="subsection-title" data-icon="🧬">O que é Fitoquímica?</h3>
+                    <p><strong>Fitoquímica</strong> é a ciência que estuda os constituintes químicos das plantas, especialmente os compostos bioativos derivados do metabolismo secundário. Esses metabólitos têm funções ecológicas específicas para os vegetais — como defesa contra herbívoros e patógenos —, mas apresentam notável atividade biológica em humanos, sendo a base de inúmeros fármacos.</p>
+                    
+                    <div class="highlight-box">
+                        <strong>Por que isso é importante?</strong> O Brasil, devido à sua megabiodiversidade, representa um celeiro potencial para a descoberta de fitoterápicos e princípios ativos, mas também enfrenta desafios quanto ao extrativismo predatório e à qualidade irregular dos produtos disponíveis no mercado.
+                    </div>
+                </div>
+            </div>
+
+            <div class="section">
+                <h2 class="section-title">Cultivo e Domesticação</h2>
+                
+                <div class="subsection">
+                    <h3 class="subsection-title" data-icon="🌱">Cultivo vs. Extrativismo</h3>
+                    <p>O cultivo controlado de espécies medicinais é a alternativa mais sustentável ao extrativismo, que frequentemente leva à extinção de espécies nativas. Domesticar plantas permite compreender suas exigências ecológicas e promover práticas agrícolas regenerativas e economicamente viáveis.</p>
+                    
+                    <div class="examples-list">
+                        <h4>Exemplos por Dificuldade de Cultivo:</h4>
+                        <ul>
+                            <li><strong>Espécies de cultivo fácil:</strong> Baccharis trimera (carqueja), Mikania glomerata (guaco), Rosmarinus officinalis (alecrim)</li>
+                            <li><strong>Espécies de difícil cultivo:</strong> Ocotea odorífera (canela-sassafrás), que dependem de florestas maduras e polinização animal específica</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="subsection">
+                    <h3 class="subsection-title" data-icon="🌾">Zoneamento Edafoclimático</h3>
+                    <p>É fundamental a análise do solo, clima, topografia e ecologia da planta para definir áreas apropriadas para cultivo. A agricultura orgânica é recomendada, pois evita contaminação por agrotóxicos e potencializa a concentração de princípios ativos.</p>
+                </div>
+
+                <div class="subsection">
+                    <h3 class="subsection-title" data-icon="🌿">Métodos de Propagação</h3>
+                    <ul>
+                        <li><strong>Sexuada:</strong> Sementes (suscetíveis à variabilidade genética)</li>
+                        <li><strong>Assexuada:</strong> Estacas, estaquias de raiz, divisão de touceiras</li>
+                    </ul>
+                    <p><em>Exemplo:</em> a hortelã pode ser propagada por estaquia de raiz; o guaco por estacas de caule.</p>
+                </div>
+            </div>
+
+            <div class="section">
+                <h2 class="section-title">Colheita e Processamento</h2>
+                
+                <div class="subsection">
+                    <h3 class="subsection-title" data-icon="🕐">Timing Fisiológico</h3>
+                    <p>A concentração dos princípios ativos varia conforme:</p>
+                    <ul>
+                        <li><strong>Manhã:</strong> óleos essenciais e alcaloides</li>
+                        <li><strong>Tarde:</strong> glicosídeos</li>
+                        <li><strong>Fase da planta:</strong> folhas no pré-floração, flores bem abertas, frutos maduros</li>
+                    </ul>
+                </div>
+
+                <div class="subsection">
+                    <h3 class="subsection-title" data-icon="🌬️">Processos Pós-colheita</h3>
+                    <ul>
+                        <li><strong>Secagem:</strong> deve ocorrer à sombra, bem ventilada, a temperaturas controladas. Temperaturas elevadas degradam os princípios ativos</li>
+                        <li><strong>Armazenamento:</strong> deve ser feito em local seco, escuro, arejado, sem contaminação por pragas</li>
+                    </ul>
+                    <p>Esses cuidados evitam degradação de compostos como flavonoides, alcaloides e terpenos, garantindo estabilidade farmacológica.</p>
+                </div>
+            </div>
+
+            <div class="section">
+                <h2 class="section-title">Métodos de Extração</h2>
+                
+                <div class="subsection">
+                    <h3 class="subsection-title" data-icon="🔬">Tipos de Extração</h3>
+                    <p>A extração visa isolar compostos desejados a partir da planta seca. As técnicas devem respeitar a natureza da planta, o tipo de tecido e as propriedades físico-químicas do composto alvo.</p>
+                    
+                    <div class="table-container">
+                        <table>
+                            <thead>
+                                <tr>
+                                    <th>Tipo</th>
+                                    <th>Técnicas</th>
+                                    <th>Características</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>A frio</td>
+                                    <td>Maceração, digestão, remaceração</td>
+                                    <td>Indicado para gomas, resinas, alginatos</td>
+                                </tr>
+                                <tr>
+                                    <td>A quente (aberto)</td>
+                                    <td>Infusão, decocção</td>
+                                    <td>Infusão para estruturas moles, decocção para partes lenhosas</td>
+                                </tr>
+                                <tr>
+                                    <td>A quente (fechado)</td>
+                                    <td>Soxhlet, refluxo</td>
+                                    <td>Mais eficientes, mas demandam controle térmico</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+
+                <div class="subsection">
+                    <h3 class="subsection-title" data-icon="💧">Solventes e Polaridade</h3>
+                    <p>Solventes são escolhidos com base na polaridade dos compostos a extrair:</p>
+                    <ul>
+                        <li><strong>Apolares:</strong> hexano, éter — extraem lipídios, ceras</li>
+                        <li><strong>Médios:</strong> acetato de etila, butanol — extraem flavonoides</li>
+                        <li><strong>Polares:</strong> etanol, metanol, água — extraem saponinas, taninos, glicosídeos</li>
+                    </ul>
+                    <p>A partição ácido-base é frequentemente usada para separar alcaloides e compostos solúveis por ajustes de pH.</p>
+                </div>
+            </div>
+
+            <div class="section">
+                <h2 class="section-title">Purificação e Isolamento</h2>
+                
+                <div class="subsection">
+                    <h3 class="subsection-title" data-icon="⚗️">Fracionamento</h3>
+                    <p>Utiliza partição líquida-líquida entre solventes imiscíveis com polaridades distintas. A eficácia depende do coeficiente de partição da substância.</p>
+                </div>
+
+                <div class="subsection">
+                    <h3 class="subsection-title" data-icon="🧪">Cromatografia</h3>
+                    <p>As técnicas cromatográficas são cruciais para isolar, identificar e quantificar compostos bioativos:</p>
+                    
+                    <div class="table-container">
+                        <table>
+                            <thead>
+                                <tr>
+                                    <th>Técnica</th>
+                                    <th>Princípio</th>
+                                    <th>Aplicação</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>Cromatografia em Camada Delgada (CCD)</td>
+                                    <td>Adsorção em sílica</td>
+                                    <td>Triagem rápida</td>
+                                </tr>
+                                <tr>
+                                    <td>Coluna</td>
+                                    <td>Separação preparativa</td>
+                                    <td>Isolamento em larga escala</td>
+                                </tr>
+                                <tr>
+                                    <td>CLAE (HPLC)</td>
+                                    <td>Alta pressão, alta eficiência</td>
+                                    <td>Quantificação e purificação</td>
+                                </tr>
+                                <tr>
+                                    <td>Gasosa (CG/EM)</td>
+                                    <td>Compostos voláteis + espectrometria</td>
+                                    <td>Óleos essenciais</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    
+                    <ul>
+                        <li><strong>Fase normal:</strong> fase estacionária polar, fase móvel apolar</li>
+                        <li><strong>Fase reversa:</strong> fase estacionária apolar, fase móvel polar (mais comum em HPLC)</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="section">
+                <h2 class="section-title">Análise Fitoquímica</h2>
+                
+                <div class="subsection">
+                    <p>Após o isolamento, são conduzidas análises com objetivo de identificar os constituintes:</p>
+                    <ul>
+                        <li><strong>CCD + luz UV:</strong> para triagem visual de compostos</li>
+                        <li><strong>HPLC-UV ou HPLC-MS:</strong> análise quantitativa e qualitativa</li>
+                        <li><strong>RMN e espectrometria de massas:</strong> elucidação estrutural</li>
+                    </ul>
+                    <p>Essas técnicas orientam a padronização de extratos, essencial para garantir eficácia terapêutica e segurança toxicológica em produtos fitoterápicos.</p>
+                </div>
+            </div>
+
+            <div class="section">
+                <h2 class="section-title">Exemplos Práticos</h2>
+                
+                <div class="examples-list">
+                    <h4>📌 Casos de Sucesso:</h4>
+                    <ul>
+                        <li><strong>Curcumina (Curcuma longa):</strong> isolada por Soxhlet com etanol. Mostra ação anti-inflamatória em modelos de colite e artrite reumatoide</li>
+                        <li><strong>Resveratrol (uvas):</strong> isolado por HPLC. É promissor na prevenção de doenças cardiovasculares</li>
+                        <li><strong>Artemisinina (Artemisia annua):</strong> extraída com hexano. Premiada como antimalárico, sintetizado com base em fitoquímica aplicada</li>
+                    </ul>
+                </div>
+                
+                <div class="reference">
+                    Referência: Ferreira, I. C. F. R. et al. (2015). Chemical features of phytochemicals and their role in antioxidant activity. Trends in Food Science & Technology, 41(2), 85–97.
+                </div>
+            </div>
+
+            <div class="conclusion">
+                <h3>Conclusão</h3>
+                <p>O conhecimento técnico e científico do cultivo, extração e isolamento de metabólitos secundários é a base da farmacognosia moderna. O uso racional da biodiversidade vegetal — com técnicas apropriadas, práticas agrícolas sustentáveis e métodos de extração eficazes — é o caminho para integrar tradição terapêutica com rigor científico.</p>
+                <p>Esses conhecimentos não só viabilizam a produção de fitoterápicos seguros, eficazes e sustentáveis, como também posicionam a fitoquímica no centro das inovações farmacêuticas contemporâneas.</p>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
